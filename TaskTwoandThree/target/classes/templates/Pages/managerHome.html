@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<title>Manager Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+        body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    </style>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+    <header class="w3-container w3-center w3-padding-32">
+        <h1><b th:object="${user}" th:text="${user.name}"></b></h1>
+        <h4><b th:object="${user}" th:text="${user.roles}"></b></h4>
+        <h5 class="w3-tag">Department : <span class="w3-tag" th:object="${user}" th:text="${user.department}"></span> <a class="dropdown-item " th:href="@{/logout/manager}">Logout</a></h5>
+
+
+    </header>
+
+    <div class="w3-card w3-margin">
+        <div class="w3-container w3-padding">
+            <h4>Department User List</h4>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white" >
+            <li class="w3-padding-16"th:each="userInDep : ${listUser}">
+                <p>Name :
+                    <span class="w3-large" th:text="${userInDep.name}"></span><br>
+                </p>
+
+                <p> Email :
+                    <span class="w3-large" th:text="${userInDep.email}"></span><br>
+                </p>
+
+                <p> Role :
+                    <span class="w3-large" th:text="${userInDep.roles}"></span><br>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <hr>
+</div>
+</div>
+</div><br>
+</div>
+
+
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
